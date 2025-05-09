@@ -35,7 +35,6 @@ def combate():
         if jugador.digicoins <= 0:
             jugador.digicoins = 0
 
-
 def usar_item():
     inventario = clase_inventario()
     print("-----------Inventario-----------")
@@ -52,7 +51,7 @@ def usar_item():
         # Las pociones aumentan la vida de un digipymon
         inventario.usar_objeto(objeto_elegido)
         print("Has usado: " + objeto_elegido + "!")
-    elif objeto_elegido == "Anabolizantes"
+    elif objeto_elegido == "Anabolizantes":
         # Los anabolizantes el ataque
         inventario.usar_objeto(objeto_elegido)
         print("Has usado: " + objeto_elegido + "!")
