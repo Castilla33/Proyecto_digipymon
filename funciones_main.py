@@ -18,8 +18,8 @@ def menu():
 
 def combate():
     lista_de_nombres = lista_nombre()
-    enemigo1 = Enemigo(lista_de_nombres.lista_nombres_entrenadores)
-    # Añade al enemigo tantos digipymons como tu tengas
+    enemigo1 = Enemigo(random.choice(lista_de_nombres.lista_nombres_entrenadores))
+
     print("-----------¿Deseas luchar?-----------")
     print("1 para luchar")
     print("2 para huir")
@@ -27,9 +27,9 @@ def combate():
     combate = int(input("¿Que quieres hacer? "))
 
     if combate == 1:
+        contadorJug = 0
+        contadorEn = 0
         for i in range(int(jugador.cantidad_digipymon)):
-            contadorJug = 0
-            contadorEn = 0
             tipos = ["Agua", "Fuego", "Planta"]
             enemigo1.añadir_digipymon(digiEn = Digipymon((random.choice(lista_de_nombres.lista_nombres_digipymon), random.randint(10, 20), random.randint(0, 9), random.randint(0, 3), random.choice(tipos))))
         
@@ -92,3 +92,5 @@ def usar_item():
         # Los anabolizantes el ataque
         inventario.usar_objeto(objeto_elegido)
         print("Has usado: " + objeto_elegido + "!")
+
+combate()
