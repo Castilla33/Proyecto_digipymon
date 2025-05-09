@@ -1,6 +1,3 @@
-#import digipymon
-
-
 class clase_jugador:
     def __init__(self, nombre):
         self.nombre = nombre
