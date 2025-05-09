@@ -1,7 +1,9 @@
 from clase_inventario import clase_inventario
 from clase_jugador import clase_jugador 
 from clase_lista_nombres import lista_nombre
-jugador = clase_jugador()
+from enemigo import Enemigo
+from digipymon import Digipymon
+jugador = clase_jugador("Juga")
 
 def menu():
     print("-----------Menu-----------")
@@ -15,7 +17,7 @@ def menu():
 
 def combate():
     lista_de_nombres = lista_nombre()
-    enemigo1 = clase_enemigo(lista_de_nombres.lista_nombres_entrenadores)
+    enemigo1 = Enemigo(lista_de_nombres.lista_nombres_entrenadores)
     # Añade al enemigo tantos digipymons como tu tengas
     print("-----------¿Deseas luchar?-----------")
     print("1 para luchar")
@@ -44,11 +46,13 @@ def usar_item():
     objeto_elegido = input("Elige el objeto: ")
     if objeto_elegido == "Digipyballs":
         print("No puedes usar ahora mismo las digipyballs")
-    # Las pociones aumentan la vida de un digipymon
-    # Los anabolizantes el ataque
     elif objeto_elegido != "Pocion" or "Anabolizantes":
         print("No existe ese objeto")
-    else:
+    elif objeto_elegido == "Pocion":
+        # Las pociones aumentan la vida de un digipymon
         inventario.usar_objeto(objeto_elegido)
         print("Has usado: " + objeto_elegido + "!")
-
+    elif objeto_elegido == "Anabolizantes"
+        # Los anabolizantes el ataque
+        inventario.usar_objeto(objeto_elegido)
+        print("Has usado: " + objeto_elegido + "!")
