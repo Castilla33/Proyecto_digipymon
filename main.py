@@ -82,13 +82,12 @@ def usar_item():
     objeto_elegido = input("Elige el objeto: ")
     if objeto_elegido == "Digipyballs":
         print("No puedes usar ahora mismo las digipyballs")
-    #elif objeto_elegido != "Pocion" or "Anabolizantes":
-    #print("No existe ese objeto")
     elif objeto_elegido == "Pocion":
         inventario.usar_objeto(objeto_elegido)
 
         for digipymon in jugador.consultar_digipymon():
             print(digipymon)
+
         aplicarDigipymon = input("Elige el digipymon en el que aplicarlo: ")
         for digipymon in jugador.lista_digipymon:
             if digipymon.nombre == aplicarDigipymon:
@@ -101,6 +100,7 @@ def usar_item():
 
         for digipymon in jugador.consultar_digipymon():
             print(digipymon)
+            
         aplicarDigipymon = input("Elige el digipymon en el que aplicarlo: ")
         for digipymon in jugador.lista_digipymon:
             if digipymon.nombre == aplicarDigipymon:
