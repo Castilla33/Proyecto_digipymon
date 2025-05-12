@@ -10,7 +10,8 @@ class Jugador:
         self.cantidad_digipymon += 1
 
     def consultar_digipymon(self):
-        return self.lista_digipymon
+        for digipymon in self.lista_digipymon:
+            return self.lista_digipymon
         
     def consultar_digicoins(self):
         return self.digicoins

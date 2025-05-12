@@ -3,7 +3,7 @@ from clase_inventario import Inventario
 from clase_jugador import Jugador 
 from clase_lista_nombres import Lista
 from enemigo import Enemigo
-from digipymon import Digipymon
+from Digipymon import Digipymon
 jugador = Jugador("Juga")
 
 def menu():
@@ -85,14 +85,29 @@ def usar_item():
     #elif objeto_elegido != "Pocion" or "Anabolizantes":
     #print("No existe ese objeto")
     elif objeto_elegido == "Pocion":
-        # Las pociones aumentan la vida de un digipymon
         inventario.usar_objeto(objeto_elegido)
-        print("Has usado: " + objeto_elegido + "!")
-        # ¿Es necesario un límite de vida?
-    elif objeto_elegido == "Anabolizantes":
-        # Los anabolizantes el ataque
-        inventario.usar_objeto(objeto_elegido)
-        print("Has usado: " + objeto_elegido + "!")
 
+        for digipymon in jugador.consultar_digipymon():
+            print(digipymon)
+        aplicarDigipymon = input("Elige el digipymon en el que aplicarlo: ")
+        for digipymon in jugador.lista_digipymon:
+            if digipymon.nombre == aplicarDigipymon:
+                digipymon.vida += 10
+                print("Has usado: " + objeto_elegido + "!")
+            else:
+                print("Ese digipymon no existe")
+    elif objeto_elegido == "Anabolizantes":
+        inventario.usar_objeto(objeto_elegido)
+
+        for digipymon in jugador.consultar_digipymon():
+            print(digipymon)
+        aplicarDigipymon = input("Elige el digipymon en el que aplicarlo: ")
+        for digipymon in jugador.lista_digipymon:
+            if digipymon.nombre == aplicarDigipymon:
+                digipymon.ataque += 4
+                print("Has usado: " + objeto_elegido + "!")
+            else:
+                print("Ese digipymon no existe")
+        
     else:
         print("No existe ese objeto")
