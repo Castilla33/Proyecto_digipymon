@@ -1,4 +1,4 @@
-class clase_jugador:
+class Jugador:
     def __init__(self, nombre):
         self.nombre = nombre
         self.lista_digipymon = []
