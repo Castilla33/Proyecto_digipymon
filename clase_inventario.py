@@ -1,4 +1,4 @@
-class clase_inventario:
+class Inventario:
     def __init__(self):
         self.objetos = {}
 
