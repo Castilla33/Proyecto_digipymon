@@ -15,7 +15,7 @@ def generar_digipymon_aleatorio():
 
 def buscar_digipymon(jugador,inventario):
     pymon = generar_digipymon_aleatorio
-    print(Has encontrado un Digipymon aleatorio!!!!!)
+    print("Has encontrado un Digipymon aleatorio!!!!!")
 
 
     
