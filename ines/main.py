@@ -1,12 +1,17 @@
 import random
+from clase_lista_nombres import ListaNombres
+from Digipymon import Digipymon
 
 def generar_digipymon_aleatorio():
+    lista = ListaNombres()
+    nombre = lista.obtener_nombre_digipymon()
     vida = random.randint(10,20)
     ataque = random.randint(1,10)
     nivel = random.randint(1,3)
     tipo = random.choice(["fuego", "agua", "planta"])
+    digi = Digipymon(nombre,vida,ataque,tipo,nivel)
 
-
+    return digi
 
 
     
