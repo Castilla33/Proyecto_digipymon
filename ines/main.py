@@ -1,6 +1,6 @@
 import random
 from clase_lista_nombres import ListaNombres
-from Digipymon import Digipymon
+from digipymon import Digipymon
 
 def generar_digipymon_aleatorio():
     lista = ListaNombres()
