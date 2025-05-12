@@ -1,10 +1,10 @@
 import random
-from clase_inventario import clase_inventario
-from clase_jugador import clase_jugador 
-from clase_lista_nombres import lista_nombre
+from clase_inventario import Inventario
+from clase_jugador import Jugador 
+from clase_lista_nombres import Lista
 from enemigo import Enemigo
 from digipymon import Digipymon
-jugador = clase_jugador("Juga")
+jugador = Jugador("Juga")
 
 def menu():
     print("-----------Menu-----------")
@@ -17,7 +17,7 @@ def menu():
     print("7. Salir")
 
 def combate():
-    lista_de_nombres = lista_nombre()
+    lista_de_nombres = Lista()
     enemigo1 = Enemigo(random.choice(lista_de_nombres.lista_nombres_entrenadores))
 
     print("-----------¿Deseas luchar?-----------")
@@ -73,7 +73,7 @@ def combate():
             jugador.digicoins = 0
 
 def usar_item():
-    inventario = clase_inventario()
+    inventario = Inventario()
     print("-----------Inventario-----------")
     print("¿Qué item deseas usar?")
     print("--------------------------------")
@@ -82,13 +82,17 @@ def usar_item():
     objeto_elegido = input("Elige el objeto: ")
     if objeto_elegido == "Digipyballs":
         print("No puedes usar ahora mismo las digipyballs")
-    elif objeto_elegido != "Pocion" or "Anabolizantes":
-        print("No existe ese objeto")
+    #elif objeto_elegido != "Pocion" or "Anabolizantes":
+    #print("No existe ese objeto")
     elif objeto_elegido == "Pocion":
         # Las pociones aumentan la vida de un digipymon
         inventario.usar_objeto(objeto_elegido)
         print("Has usado: " + objeto_elegido + "!")
+        # ¿Es necesario un límite de vida?
     elif objeto_elegido == "Anabolizantes":
         # Los anabolizantes el ataque
         inventario.usar_objeto(objeto_elegido)
         print("Has usado: " + objeto_elegido + "!")
+
+    else:
+        print("No existe ese objeto")
