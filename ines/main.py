@@ -14,8 +14,17 @@ def generar_digipymon_aleatorio():
     return digi
 
 def buscar_digipymon(jugador,inventario):
-    pymon = generar_digipymon_aleatorio
-    print("Has encontrado un Digipymon aleatorio!!!!!")
+    while True:
+        pymon = generar_digipymon_aleatorio()
+        print(f"Has encontrado un Digipymon aleatorio!!!!! {pymon}")
+        probabilidad = 100 - (pymon.nivel * 10)
+        print(f"La probailidad de que captures a una persona: {probabilidad}%")
+
+
+def
+
+
+    
 
 
     
