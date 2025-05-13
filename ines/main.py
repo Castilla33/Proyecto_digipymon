@@ -66,6 +66,32 @@ def digishop(jugador,inventario):
                 salir = True
 
 
+def main():
+    print("Basado en un juego de cazar monstruos, donde hubo una guerra entre ellos")
+    time.sleep(2)
+    print("No se sabe como se originó la guerra entre ellos pero...")
+    time.sleep(2)
+    print("La guerra era entre dos bandas, por lo que se dice")
+    time.sleep(2)
+    print("Gano una de ellas")
+    time.sleep(2)
+    nombre = input("Introduce el nombre de los monstruos: ")
+    Objeto = Jugador1(nombre)
+    time.sleep(1)
+    print("Al final solo quedo un bando")
+    time.sleep(2)
+    print("La ciudad se quedo completamente en silencio...")
+    python = generar_digipymon_aleatorio()
+    time.sleep(2)
+    print("Has obtenido un Digipymon ")
+    print("es un: " + str(python))
+    JugadorObjeto.añadir_digipymon(python)
+    print("Has obtenido 3 digipyballs y una pocion")
+    inventario_objeto.agregar_objeto
+
+
+
+
     
     
 
