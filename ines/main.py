@@ -1,4 +1,5 @@
 import random
+import time
 from clase_lista_nombres import ListaNombres
 from digipymon import Digipymon
 
@@ -22,28 +23,58 @@ def buscar_digipymon(jugador,inventario):
 
 
 def digishop(jugador,inventario):
-    print("Bienvenido a la tienda: ")
-    print("1. Digipyball --> 5 digicoins")
-    print("2. Pocion --> 3 digicoins")
-    print("3. Anabolizante --> 4 digicoins")
-    print("4. salir")
-    opcion = input ("¿Elije un número de lo que quieras comprar?: ")
+    print("Bienvenido a la mejor tienda {jugador.nombre}")
+    print("Tienes {jugador.monedas}monedas")
+    time.sleep(3)
+    salir = False
+    jugador1 = jugador()
+    inventario1 = inventario()
+    while salir == False:
+        print("Bienvenido a la tienda: ")
+        print("1. Digipyball --> 5 digicoins")
+        print("2. Pocion --> 3 digicoins")
+        print("3. Anabolizante --> 4 digicoins")
+        print("4. salir")
+        opcion = input ("Elije una de las opciones: ")
+        
+        if opcion == 1:
+            if jugador1.digicoins >= 5:
+                jugador1.digicoins - 5
+                inventario1.añadir_objetos.append("Digiball",1)
+                print("Has comprado una Digiball!!!!")
+            else:
+                print("No tienes suficientes monedas")
+            
+        if opcion == 2:
+            if jugador1.digicoins >= 3:
+                jugador1.digicoins - 3
+                inventario1.añadir_objetos.append("Pocion",1)
+                print("Has comprado una pocion!!!")
+            else:
+                print("No tienes suficiente dinero")
 
-    salir = True
-    While salir == True:
-    buscar_digipymon()
-    encontrar = input("Introduce el número: ")
+        if opcion == 3:
+            if jugador1.digicoins >= 4:
+                jugador1.digicoins - 4
+                inventario1.añadir_objetos.append("Anabolizante")
+            else:
+                print("No tienes suficiente dinero")
+            
+            if opcion == 4:
+                print("Has huido del juego")
+                time.sleep(3)
+                salir = True
+
+
     
-    if encontrar == 1:
+    
+
+    
+    
         
 
 
-    elif encontrar() == "salir":
-    print("Nos vemos")
-    salir = False
-
-    else:
-        print("Tu dato no es valido")
+    
 
 
     
