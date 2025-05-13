@@ -28,6 +28,24 @@ def digishop(jugador,inventario):
     print("3. Anabolizante --> 4 digicoins")
     print("4. salir")
     opcion = input ("¿Elije un número de lo que quieras comprar?: ")
+
+    salir = True
+    While salir == True:
+    buscar_digipymon()
+    encontrar = input("Introduce el número: ")
+    
+    if encontrar == 1:
+        
+
+
+    elif encontrar() == "salir":
+    print("Nos vemos")
+    salir = False
+
+    else:
+        print("Tu dato no es valido")
+
+
     
 
 
