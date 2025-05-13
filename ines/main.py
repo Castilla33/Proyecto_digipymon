@@ -21,7 +21,14 @@ def buscar_digipymon(jugador,inventario):
         print(f"La probailidad de que captures a una persona: {probabilidad}%")
 
 
-def
+def digishop(jugador,inventario):
+    print("Bienvenido a la tienda: ")
+    print("1. Digipyball --> 5 digicoins")
+    print("2. Pocion --> 3 digicoins")
+    print("3. Anabolizante --> 4 digicoins")
+    print("4. salir")
+    opcion = input ("¿Elije un número de lo que quieras comprar?: ")
+    
 
 
     
