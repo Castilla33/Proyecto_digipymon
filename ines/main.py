@@ -1,16 +1,15 @@
 import random
 import time
-from clase_lista_nombres import ListaNombres
+from lista_nombres import Lista
 from digipymon import Digipymon
-from clase_inventario import Inventario
-from clase_jugador import Jugador 
-from clase_lista_nombres import Lista
+from inventario import Inventario
+from jugador import Jugador 
 from enemigo import Enemigo
-from Digipymon import Digipymon
+
 jugador = Jugador("Juga")
 
 def generar_digipymon_aleatorio():
-    lista = ListaNombres()
+    lista = Lista()
     nombre = lista.obtener_nombre_digipymon()
     vida = random.randint(10,20)
     ataque = random.randint(1,10)
@@ -30,7 +29,7 @@ def menu():
     print("6. Consultar digipymons")
     print("7. Salir")
 
-def buscar_digipymon(jugador,inventario):
+def buscar_digipymon(jug, inv):
         pymon = generar_digipymon_aleatorio()
         print(f"Has encontrado un Digipymon aleatorio!!!!! " + str(pymon))
         probabilidad = 100 - (pymon.nivel * 10)
@@ -44,28 +43,28 @@ def buscar_digipymon(jugador,inventario):
             nombre = int(input("Elije la opcion que quieras "))
             
             if nombre == 1:
-                if "Digiballs" in InventarioObjeto.diccionario_objetos["Digiballs"]:
+                if "Digiballs" in inv.objetos["Digiballs"]:
                     
-                    InventarioObjeto.usar_objetos("Digyballs")
+                    inv.objetos.usar_objetos("Digyballs")
 
                     elegir = random.randint(1, 100)
 
                     if elegir <= probabilidad:
-                        JugadorObjeto.añadir_digipymon(digipymonObjeto)
+                        jug.añadir_digipymon(pymon)
                     else:
                         print("No has podido capturar al monstruo")
-                        print("Ha escapado corre!!: " + str(digipymonobjeto))
+                        print("Ha escapado corre!!: " + str(pymon))
                     bucle = False
                 else:
                     print("No te quedan digyballs")
             elif nombre == 2:
-                if jugadorObjeto.digicoins > 0:
-                    jugadorObjeto.digicoins -= 1
-                    print(f"Tiene un total de: " {JugadorObjeto.consultar_digicoins()} digicoins)
+                if jug.digicoins > 0:
+                    jug.digicoins -= 1
+                    print(f"Tiene un total de:  {jug.consultar_digicoins()} digicoins")
 
                     bucle = False
-                elif jugadorObjeto.digicoins <= 0:
-                    print("Debes un total de: " {JugadorObjeto.digicoins} digicoins)
+                elif jug.digicoins <= 0:
+                    print("Debes un total de:  {jug.digicoins} digicoins")
 
                 else:
                     print("No es una opcion valida")
@@ -213,36 +212,38 @@ def usar_item():
 
 
 def main():
+    inv = Inventario()
     print("Basado en un juego de cazar monstruos, donde hubo una guerra entre ellos")
-    time.sleep(2)
+    #time.sleep(2)
     print("No se sabe como se originó la guerra entre ellos pero...")
-    time.sleep(2)
+    #time.sleep(2)
     print("La guerra era entre dos bandas, por lo que se dice")
-    time.sleep(2)
+    #time.sleep(2)
     print("Gano una de ellas")
-    time.sleep(2)
-    nombre = input("Introduce el nombre de los monstruos: ")
-    Objeto = Jugador1(nombre)
-    time.sleep(1)
+    #time.sleep(2)
+    nombre = input("Introduce el nombre del entrenador: ")
+    jug = Jugador(nombre)
+    #time.sleep(1)
     print("Al final solo quedo un bando")
-    time.sleep(2)
+    #time.sleep(2)
     print("La ciudad se quedo completamente en silencio...")
     python = generar_digipymon_aleatorio()
-    time.sleep(2)
+    #time.sleep(2)
     print("Has obtenido un Digipymon ")
     print("es un: " + str(python))
-    JugadorObjeto.añadir_digipymon(python)
+    jug.añadir_digipymon(python)
     print("Has obtenido 3 digipyballs y una pocion")
-    inventario_objeto.agregar_objeto("Digyballs", 3)
-    inventario_objeto.agregar_objeto("Pocion", 1)
-    inventario_objeto.mostrar_inventario()
+    inv.añadir_objeto("Digyballs", 3)
+    inv.añadir_objeto("Pocion", 1)
 
     salir = True
     while salir:
-        opcion = menu()
+        menu()
+
+        opcion = input("Elige que quieres hacer: ")
 
         if opcion == 1:
-            buscar-digipymon(JugadorObjeto, inventariObjeto)
+            buscar_digipymon(jug, inv)
 
         elif opcion == 2:
             print("No puedes luchar")
@@ -251,41 +252,19 @@ def main():
             print("Todavia no se ha usado en la tienda")
 
         elif opcion == 4:
-            InventarioObjeto.mostrar_inventario()
+            print(inv.objetos)
             objeto = input("¿Que objeto quieres usar?: ")
-            InventarioObjeto.usar_objetos(objeto)
+            inv.usar_objeto(objeto)
+        
         elif opcion == 5:
             print("Tu inventario es:")
 
         elif opcion == 6:
-            prin("Tus Digipymon son: ")
+            print("Tus Digipymon son: ")
 
-            JugadorObjeto.consultar_digipymon()
+            jug.consultar_digipymon()
         
         elif opcion == 7:
             print("Hasta la proxima!!")
-            bucle = False
+            salir = False
 main()
-
-
-
-
-
-    
-    
-
-    
-    
-        
-
-
-    
-
-
-    
-
-
-    
-
-
-    
