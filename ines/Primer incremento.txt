@@ -1,0 +1,5 @@
+a. Investiga si hay alguna herramienta similar a Javadoc para Python y úsala para generar la documentación de todas las clases y métodos de tu sistema.
+
+SI, hay una herramienta llamada Sphinx. 
+Sphinx es una herramienta de documentación para proyectos de Python. Fue creada originalmente para la documentación de Phyton mismo, pero hoy en día es usada por muchísimos proyectos grandes como Django, Flask, NumPy, SciPy...
+Sphinx lo que hace es leer los comentarios que escribimos dentro de las clases, funciones y módulos de código y lo que hace es que genera automáticamente una documentación
