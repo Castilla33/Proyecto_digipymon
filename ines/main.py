@@ -15,11 +15,45 @@ def generar_digipymon_aleatorio():
     return digi
 
 def buscar_digipymon(jugador,inventario):
-    while True:
         pymon = generar_digipymon_aleatorio()
-        print(f"Has encontrado un Digipymon aleatorio!!!!! {pymon}")
+        print(f"Has encontrado un Digipymon aleatorio!!!!! " + str(pymon))
         probabilidad = 100 - (pymon.nivel * 10)
-        print(f"La probailidad de que captures a una persona: {probabilidad}%")
+        print(f"La probailidad de que captures a un mostruo es: {probabilidad}%")
+        bucle = True
+        while bucle:
+            print("Cuidado estas en sitio peligroso ")
+            print("1. Captura Digipymon")
+            print("Rapido huye!!!!")
+
+            nombre = int(input("Elije la opcion que quieras "))
+            
+            if nombre == 1:
+                if "Digiballs" in InventarioObjeto.diccionario_objetos["Digiballs"]:
+                    
+                    InventarioObjeto.usar_objetos("Digyballs")
+
+                    elegir = random.randint(1, 100)
+
+                    if elegir <= probabilidad:
+                        JugadorObjeto.añadir_digipymon(digipymonObjeto)
+                    else:
+                        print("No has podido capturar al monstruo")
+                        print("Ha escapado corre!!: " + str(digipymonobjeto))
+                    bucle = False
+                else:
+                    print("No te quedan digyballs")
+            elif nombre == 2:
+                if jugadorObjeto.digicoins > 0:
+                    jugadorObjeto.digicoins -= 1
+                    print(f"Tiene un total de: " {JugadorObjeto.consultar_digicoins()} digicoins)
+
+                    bucle = False
+                elif jugadorObjeto.digicoins <= 0:
+                    print("Debes un total de: " {JugadorObjeto.digicoins} digicoins)
+
+                else:
+                    print("No es una opcion valida")
+
 
 
 def digishop(jugador,inventario):
