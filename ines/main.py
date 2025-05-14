@@ -87,7 +87,40 @@ def main():
     print("es un: " + str(python))
     JugadorObjeto.añadir_digipymon(python)
     print("Has obtenido 3 digipyballs y una pocion")
-    inventario_objeto.agregar_objeto
+    inventario_objeto.agregar_objeto("Digyballs", 3)
+    inventario_objeto.agregar_objeto("Pocion", 1)
+    inventario_objeto.mostrar_inventario()
+
+    salir = True
+    while salir:
+        opcion = menu()
+
+        if opcion == 1:
+            buscar-digipymon(JugadorObjeto, inventariObjeto)
+
+        elif opcion == 2:
+            print("No puedes luchar")
+
+        elif opcion == 3:
+            print("Todavia no se ha usado en la tienda")
+
+        elif opcion == 4:
+            InventarioObjeto.mostrar_inventario()
+            objeto = input("¿Que objeto quieres usar?: ")
+            InventarioObjeto.usar_objetos(objeto)
+        elif opcion == 5:
+            print("Tu inventario es:")
+
+        elif opcion == 6:
+            prin("Tus Digipymon son: ")
+
+            JugadorObjeto.consultar_digipymon()
+        
+        elif opcion == 7:
+            print("Hasta la proxima!!")
+            bucle = False
+main()
+
 
 
 
