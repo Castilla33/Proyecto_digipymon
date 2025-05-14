@@ -11,7 +11,7 @@ class Jugador:
 
     def consultar_digipymon(self):
         for digipymon in self.lista_digipymon:
-            return self.lista_digipymon
+            return digipymon
         
     def consultar_digicoins(self):
         return self.digicoins
