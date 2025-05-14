@@ -158,7 +158,7 @@ def digishop(jug, inv):
                 inv.añadir_objeto("Digipyball", 1)
                 print("Has comprado una Digipyball!!!!")
             else:
-                print("No tienes suficientes monedas")
+                print("No tienes suficientes digicoins")
             
         elif opcion == 2:
             if jug.digicoins >= 3:
@@ -166,14 +166,14 @@ def digishop(jug, inv):
                 inv.añadir_objeto("Pocion", 1)
                 print("Has comprado una pocion!!!")
             else:
-                print("No tienes suficiente dinero")
+                print("No tienes suficiente digicoins")
 
         elif opcion == 3:
             if jug.digicoins >= 4:
                 jug.digicoins - 4
                 inv.añadir_objeto("Anabolizante", 1)
             else:
-                print("No tienes suficiente dinero")
+                print("No tienes suficiente digicoins")
             
         elif opcion == 4:
                 print("Has salido de la tienda")
@@ -234,22 +234,22 @@ def usar_item(jug, inv):
 
 def main():
     inv = Inventario()
-    print("Basado en un juego de cazar monstruos, donde hubo una guerra entre ellos")
-    #time.sleep(2)
+    print("Basado en un juego de cazar digipymon, donde hubo una guerra entre ellos")
+    time.sleep(2)
     print("No se sabe como se originó la guerra entre ellos pero...")
-    #time.sleep(2)
+    time.sleep(2)
     print("La guerra era entre dos bandas, por lo que se dice")
-    #time.sleep(2)
+    time.sleep(2)
     print("Gano una de ellas")
-    #time.sleep(2)
+    time.sleep(2)
     nombre = input("Introduce el nombre del entrenador: ")
     jug = Jugador(nombre)
-    #time.sleep(1)
+    time.sleep(1)
     print("Al final solo quedo un bando")
-    #time.sleep(2)
+    time.sleep(2)
     print("La ciudad se quedo completamente en silencio...")
     python = generar_digipymon_aleatorio()
-    #time.sleep(2)
+    time.sleep(2)
     print("Has obtenido un Digipymon ")
     print("es un: " + str(python))
     jug.añadir_digipymon(python)
