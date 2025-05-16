@@ -70,7 +70,7 @@ def buscar_digipymon(jug, inv):
                     print("No es una opcion valida")
 
 def combate(jugador):
-    lista_de_nombres = Lista()
+    lista_de_nombres = Lista()   
     enemigo1 = Enemigo(random.choice(lista_de_nombres.lista_nombres_entrenadores))
 
     print("-----------¿Deseas luchar?-----------")
