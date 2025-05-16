@@ -1,6 +1,6 @@
 #Definimos la clase Inventario
 class Inventario:
-    #Método constructor y se ejecuta al crear un nuevo objeto de tipo Inventario
+    #Método constructor que se ejecuta al crear un nuevo objeto de tipo Inventario
     def __init__(self):
         self.objetos = {} #Diccionario para guardar los objetos y sus cantidades
 
