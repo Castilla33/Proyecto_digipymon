@@ -1,10 +1,10 @@
 import random
 import time
-from lista_nombres import Lista
-from digipymon import Digipymon
-from inventario import Inventario
-from jugador import Jugador 
-from enemigo import Enemigo
+from clase_lista_nombres import Lista
+from clase_digipymon import Digipymon
+from clase_inventario import Inventario
+from clase_jugador import Jugador 
+from clase_enemigo import Enemigo
 
 #Función para generar un digipymon aleatorio con atributos aleatorios
 def generar_digipymon_aleatorio():
