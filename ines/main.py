@@ -34,7 +34,7 @@ def menu():
 #Función para buscar y capturar digipymon
 def buscar_digipymon(jug, inv):
         pymon = generar_digipymon_aleatorio() #Se genera un digipymon aleatorio
-        print(f"Has encontrado un Digipymon aleatorio!!!!! " + str(pymon))
+        print(f"Has encontrado un Digipymon aleatorio!!!!! " + str(pymon)) #Se muestra el digipymon aleatorio
         probabilidad = 100 - (pymon.nivel * 10) #Calcula la probailidad de captura
         print(f"La probailidad de que captures un digipymon es: {probabilidad}%") #Se dice la probabilidad que tienes
         bucle = True #Se inicia un bucle para las opciones de captura o huida
@@ -244,7 +244,7 @@ def usar_item(jug, inv):
             for digipymon in jug.lista_digipymon:
                 if digipymon.nombre == aplicarDigipymon:
                     digipymon.vida += 10 #Aumenta la vida del digipymon
-                    print("Has usado: Pocion. En: " + str(digipymon) + "!")
+                    print("Has usado: Pocion. En: " + str(digipymon) + "!") #Se muestra el mensaje de que tienes una poción
                 else:
                     print("Ese digipymon no existe") #Muestra el mensaje si no coincide el nombre 
         else:
@@ -262,7 +262,7 @@ def usar_item(jug, inv):
                 #Busca el digipymon por nombre
                 if digipymon.nombre == aplicarDigipymon:
                     digipymon.ataque += 4 #Aumenta el ataque del digipymon
-                    print("Has usado: Pocion. En: " + digipymon + "!")
+                    print("Has usado: Anabolizante. En: " + digipymon + "!")  #Se muestra el mensaje de que tienes un anabolizante
                 else:
                     print("Ese digipymon no existe") 
         else:
