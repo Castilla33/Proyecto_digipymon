@@ -38,7 +38,6 @@ def buscar_digipymon(jug, inv):
         probabilidad = 100 - (pymon.nivel * 10) #Calcula la probailidad de captura
         print(f"La probailidad de que captures un digipymon es: {probabilidad}%") #Se dice la probabilidad que tienes
         bucle = True #Se inicia un bucle para las opciones de captura o huida
-
         while bucle:
             print("Cuidado estas en sitio peligroso ")
             print("1. Captura Digipymon")
@@ -88,6 +87,7 @@ def combate(jugador):
     print("1 para luchar")
     print("2 para huir")
 
+
     #Entrada del jugador para decidir que es lo que quiere hacer
     combate = int(input("¿Que quieres hacer? "))
 
@@ -96,6 +96,7 @@ def combate(jugador):
         contadorEn = 0 #Contador de combates ganados por el enemigo
 
         #Se crean digipymon aleatoios para el enemigo, igual al número que riene el jugador
+        
         for i in range(int(jugador.cantidad_digipymon)):
             nombre = random.choice(lista_de_nombres.lista_nombres_digipymon)
             vida = random.randint(10, 20)
@@ -103,10 +104,12 @@ def combate(jugador):
             tipo = ["Agua", "Fuego", "Planta"]
             tipoAl = random.choice(tipo)
             nivel = random.randint(0, 3)
+
             digiEn = Digipymon(nombre, vida, ataque, tipoAl, nivel) #Se crea un digipymon enemigo
             enemigo1.añadir_digipymon(digiEn) #Se añade a la lista del enemigo
         
         #Se enfrentan los digipymon del jugador contra los del enemigo uno a uno 
+
         for x in range(int(jugador.cantidad_digipymon)):
             digi_jugador = jugador.lista_digipymon[x]
             digi_enemigo = enemigo1.lista_digipymon[x]
@@ -123,7 +126,8 @@ def combate(jugador):
                 contadorJug += 1
                 if digi_jugador.vida == 0:
                     print("Tu digipymon ha caído en combate!")
-            #Si el digipymon del enemifo tiene más ataque
+            #Si el digipymon del enemigo tiene más ataque
+            
             elif digi_jugador.ataque < digi_enemigo.ataque:
                 print("El digipymon del jugador: " + digi_jugador.nombre + ", supera al digipymon enemigo: " + digi_enemigo.nombre)
                 diferencia = digi_jugador.ataque - digi_enemigo.ataque
@@ -155,7 +159,6 @@ def combate(jugador):
         #Si el jugador se queda sin digicoins, se ajusta a 0
         if jugador.digicoins <= 0:
             jugador.digicoins = 0
-
 
 
 #Función para mostrar la tienda y comprar objetos
@@ -214,6 +217,7 @@ def digishop(jug, inv):
 #Función para usar objetos del inventario
 def usar_item(jug, inv):
     #Muestra el menú de opciones para elegir un objeto a usar
+
     print("-----------Inventario-----------")
     print("¿Qué item deseas usar?")
     print("--------------------------------")
@@ -300,6 +304,7 @@ def main():
     #Se añade el digipymon al equipo del jugador
     jug.añadir_digipymon(python)
     #Se dan objetos iniciales al jugador
+
     print("Has obtenido 3 digipyballs y una pocion")
     inv.objetos["Digipyball"] = 3
     inv.objetos["Pocion"] = 1

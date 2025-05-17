@@ -6,7 +6,7 @@ class Jugador:
         self.lista_digipymon = []
         self.cantidad_digipymon = 0
         self.digicoins = 10
-
+        
     #Método para añadir un digipymon al jugador
     def añadir_digipymon(self, digipymon):
         self.lista_digipymon.append(digipymon)
