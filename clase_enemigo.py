@@ -10,9 +10,3 @@ class Enemigo:
     def añadir_digipymon(self,digipymon):
         self.lista_digipymon.append(digipymon) #Añade el digipymon a la lista
         self.cantidad_digipymon += 1 #Aumenta en 1 el contador de digipymon
-
-#Crear un objeto enemigo con el nombre "Javi"
-enemigo = Enemigo("Javi")
-#Imprime el objeto enemigo directamente
-print(enemigo)
-        
